@@ -27,12 +27,20 @@ spec:
       labels:
         app: txt2img
     spec:
+      nodeSelector:
+        cloud.google.com/gke-accelerator: "nvidia-tesla-t4"
       containers:
       - name: txt2img-app
         # Replace $LOCATION with your Artifact Registry location (e.g., us-west1).
         # Replace $GCLOUD_PROJECT with your project ID.
         image: us-central1-docker.pkg.dev/ayaps-poc/docker-test/txt2img:latest
         # This app listens on port 8080 for web traffic by default.
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+          requests:
+            cpu: "16"
+            memory: "20Gi"
         ports:
         - containerPort: 8080
         env:

@@ -12,6 +12,7 @@ from PIL import Image
 from fastapi import FastAPI
 from fastapi.exceptions import HTTPException
 from fastapi.responses import FileResponse
+from pydantic import BaseModel, Field
 
 import uvicorn
 

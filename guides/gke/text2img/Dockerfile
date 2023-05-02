@@ -1,4 +1,6 @@
 
+#from tensorflow/tensorflow:2.10.0-gpu
+
 FROM python:3.9
 
  
