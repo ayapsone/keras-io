@@ -13,8 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START gke_quickstart_service_service_hello]
-# The hello service provides a load-balancing proxy over the hello-app
+# This service provides a load-balancing proxy over the txt2image
 # pods. By specifying the type as a 'LoadBalancer', Kubernetes Engine will
 # create an external HTTP load balancer.
 apiVersion: v1
@@ -28,5 +27,4 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
-# [END gke_quickstart_service_service_hello]
 ---

@@ -32,12 +32,6 @@ class GenerationResult(BaseModel):
 def home():
         return {"message": "See /docs for documentation"}
 
-#images = model.text_to_image("photograph of an astronaut riding a horse", batch_size=3)
-#id = str(uuid.uuid4())
-
-#path = os.path.join("./", f"{id}.png")
-#Image.fromarray(images[0]).save(path)
-
 @app.post("/imagine", response_model=GenerationResult)
 def generate(req: GenerationRequest):
     start = time.time()
